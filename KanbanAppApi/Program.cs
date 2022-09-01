@@ -1,4 +1,3 @@
-using BookStoreApi.Services;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using KanbanAppApi.DataAccess;
@@ -25,10 +24,6 @@ builder.Services.AddSingleton<IUsersService, UsersService>();
 builder.Services.AddSingleton<IKanbanBoardService, KanbanBoardService>();
 builder.Services.AddSingleton<ITasksService, TasksService>();
 
-builder.Services.Configure<BookStoreDatabaseSettings>(
-    builder.Configuration.GetSection("BookStoreDatabase"));
-
-builder.Services.AddSingleton<BooksService>();
 // Add services to the container.
 
 builder.Services.AddControllers();
